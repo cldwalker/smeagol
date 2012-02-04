@@ -4,7 +4,7 @@
 #
 
 SMEAGOL_ROOT_DIR = ENV['SMEAGOL_ROOT_DIR'] || "#{ENV['HOME']}/Developer"
-DEFAULT_RUBY_VERSION = "1.8.7-p352"
+DEFAULT_RUBY_VERSION = "1.9.3-p0"
 
 script "installing rbenv to #{SMEAGOL_ROOT_DIR}" do
   interpreter "bash"
