@@ -1,7 +1,6 @@
 {
   "recipes": [
-     "homebrew::misc",
-     "homebrew::dbs",
+     "homebrew", "homebrew::misc", "homebrew::dbs",
      "ruby::rbenv", "python", "node"
   ]
 }
