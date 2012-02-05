@@ -55,17 +55,17 @@ template "#{SMEAGOL_ROOT_DIR}/cinderella.profile" do
   variables({ :home => ENV['HOME'], :root => SMEAGOL_ROOT_DIR })
 end
 
-%w(bash_profile bashrc zshrc).each do |config_file|
-  execute "include cinderella environment into defaults for ~/.#{config_file}" do
-    command "if [ -f ~/.#{config_file} ]; then echo 'source #{SMEAGOL_ROOT_DIR}/cinderella.profile' >> ~/.#{config_file}; fi"
-    not_if  "grep -q 'cinderella.profile' ~/.#{config_file}"
-  end
-end
-
-execute "setup cinderella profile sourcing in ~/.profile" do
-  command "echo 'source #{SMEAGOL_ROOT_DIR}/cinderella.profile' >> ~/.profile"
-  not_if  "grep -q 'cinderella.profile' ~/.profile"
-end
+# %w(bash_profile bashrc zshrc).each do |config_file|
+#   execute "include cinderella environment into defaults for ~/.#{config_file}" do
+#     command "if [ -f ~/.#{config_file} ]; then echo 'source #{SMEAGOL_ROOT_DIR}/cinderella.profile' >> ~/.#{config_file}; fi"
+#     not_if  "grep -q 'cinderella.profile' ~/.#{config_file}"
+#   end
+# end
+#
+# execute "setup cinderella profile sourcing in ~/.profile" do
+#   command "echo 'source #{SMEAGOL_ROOT_DIR}/cinderella.profile' >> ~/.profile"
+#   not_if  "grep -q 'cinderella.profile' ~/.profile"
+# end
 
 homebrew "git"
 
